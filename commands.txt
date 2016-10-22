@@ -1,0 +1,13 @@
+
+-- push container
+gcloud docker -- push eu.gcr.io/basic-eon-140511/aggregator
+
+-- resize cluster
+gcloud container clusters resize cluster-1 --size N
+
+-- run file
+kubectl create -f isodate-service-deployment.yaml
+
+
+-- endpoint for testing dates
+http://104.199.33.189/dates/1231231233
